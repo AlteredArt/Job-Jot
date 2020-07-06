@@ -1,8 +1,12 @@
-// 110 percent complete
+// This is our login view layout
 import React, { Component } from 'react';
+
 import { Link, Redirect } from 'react-router-dom';
+
 import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
+
 import { login } from '../../actions/auth';
 
 export class Login extends Component {
@@ -10,17 +14,17 @@ export class Login extends Component {
     username: '',
     password: '',
   };
-
+// static prop types, not necessary but nice to have
   static propTypes = {
     login: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
   };
-
+// onsubmit function for loging in
   onSubmit = (e) => {
     e.preventDefault();
     this.props.login(this.state.username, this.state.password);
   };
-
+// on change function for loging in
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
@@ -34,7 +38,7 @@ export class Login extends Component {
           <h2 className="text-center">Login</h2>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
-              <label>Username</label>
+              <label>Enter Username</label>
               <input
                 type="text"
                 className="form-control"
@@ -45,7 +49,7 @@ export class Login extends Component {
             </div>
 
             <div className="form-group">
-              <label>Password</label>
+              <label>Enter Password</label>
               <input
                 type="password"
                 className="form-control"
@@ -57,11 +61,11 @@ export class Login extends Component {
 
             <div className="form-group">
               <button type="submit" className="btn btn-primary">
-                Login
+                Enter
               </button>
             </div>
             <p>
-              Don't have an account? <Link to="/register">Register</Link>
+              Need an account? <Link to="/register">Sign Up</Link>
             </p>
           </form>
         </div>
@@ -69,7 +73,7 @@ export class Login extends Component {
     );
   }
 }
-
+// map state to props
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });

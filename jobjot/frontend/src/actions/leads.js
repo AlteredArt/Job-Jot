@@ -1,11 +1,11 @@
-// 110 complete
+// these are all the actions for leads table
 import axios from 'axios';
 import { createMessage, returnErrors } from './messages';
-import { tokenConfig } from './auth';
 
+import { tokenConfig } from './auth';
 import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from './types';
 
-// GET LEADS
+// GET the LEADS from the table
 export const getLeads = () => (dispatch, getState) => {
   axios
     .get('/api/leads/', tokenConfig(getState))
@@ -14,11 +14,10 @@ export const getLeads = () => (dispatch, getState) => {
         type: GET_LEADS,
         payload: res.data,
       });
-    })
-    .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)));
+    }).catch((err) => dispatch(returnErrors(err.response.data, err.response.status)));
 };
 
-// DELETE LEAD
+// DELETE the LEAD from the database
 export const deleteLead = (id) => (dispatch, getState) => {
   axios
     .delete(`/api/leads/${id}/`, tokenConfig(getState))
@@ -28,11 +27,10 @@ export const deleteLead = (id) => (dispatch, getState) => {
         type: DELETE_LEAD,
         payload: id,
       });
-    })
-    .catch((err) => console.log(err));
+    }).catch((err) => console.log(err));
 };
 
-// ADD LEAD
+// ADD the LEAD to the database
 export const addLead = (lead) => (dispatch, getState) => {
   axios
     .post('/api/leads/', lead, tokenConfig(getState))
@@ -42,6 +40,5 @@ export const addLead = (lead) => (dispatch, getState) => {
         type: ADD_LEAD,
         payload: res.data,
       });
-    })
-    .catch((err) => dispatch(returnErrors(err.response.data, err.response.status)));
+    }).catch((err) => dispatch(returnErrors(err.response.data, err.response.status)));
 };

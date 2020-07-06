@@ -1,6 +1,8 @@
-//110
+// This is the layout for the dashboard of the user
 import React, { Fragment } from 'react';
+
 import Form from './Form';
+
 import Leads from './Leads';
 
 export default function Dashboard() {

@@ -1,8 +1,11 @@
-// 110 percent done
-//1 difference wrap state in () on const map to props
+// Give your alerts some structure
+// import react and adds in a fragment
 import React, { Component, Fragment } from 'react';
+
 import { withAlert } from 'react-alert';
+
 import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
 
 
@@ -11,7 +14,7 @@ export class Alerts extends Component {
         error: PropTypes.object.isRequired,
         message: PropTypes.object.isRequired,
       };
-    
+// make sure component mounts
     componentDidUpdate(prevProps) {
         const { error, alert, message } = this.props;
         if (error !== prevProps.error) {
@@ -21,20 +24,17 @@ export class Alerts extends Component {
           if (error.msg.non_field_errors) alert.error(error.msg.non_field_errors.join());
           if (error.msg.username) alert.error(error.msg.username.join());
         }
-    
         if (message !== prevProps.message) {
           if (message.deleteLead) alert.success(message.deleteLead);
           if (message.addLead) alert.success(message.addLead);
           if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
         }
       }
-    
       render() {
         return <Fragment />;
       }
     }
-    
-
+// map state to props function
     const mapStateToProps = (state) => ({
         error: state.errors,
         message: state.messages,

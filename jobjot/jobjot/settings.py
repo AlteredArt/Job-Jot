@@ -1,3 +1,4 @@
+# this is the main setting, bring in all installed apps and the rest frameworks
 """
 Django settings for jobjot project.
 

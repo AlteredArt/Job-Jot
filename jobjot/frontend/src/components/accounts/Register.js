@@ -1,9 +1,14 @@
-// 110
+// Register component layout
 import React, { Component } from 'react';
+
 import { Link, Redirect } from 'react-router-dom';
+
 import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
+
 import { register } from '../../actions/auth';
+
 import { createMessage } from '../../actions/messages';
 
 export class Register extends Component {
@@ -13,12 +18,12 @@ export class Register extends Component {
     password: '',
     password2: '',
   };
-
+// static prop types again not necessary
   static propTypes = {
     register: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool,
   };
-
+// on submit handler for the registry
   onSubmit = (e) => {
     e.preventDefault();
     const { username, email, password, password2 } = this.state;
@@ -33,7 +38,7 @@ export class Register extends Component {
       this.props.register(newUser);
     }
   };
-
+// on change function for registering
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
@@ -44,10 +49,10 @@ export class Register extends Component {
     return (
       <div className="col-md-6 m-auto">
         <div className="card card-body mt-5">
-          <h2 className="text-center">Register</h2>
+          <h2 className="text-center">Sign-Up</h2>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
-              <label>Username</label>
+              <label>Enter Desired Username</label>
               <input
                 type="text"
                 className="form-control"
@@ -56,8 +61,9 @@ export class Register extends Component {
                 value={username}
               />
             </div>
+
             <div className="form-group">
-              <label>Email</label>
+              <label>& Your Personal Email</label>
               <input
                 type="email"
                 className="form-control"
@@ -66,8 +72,9 @@ export class Register extends Component {
                 value={email}
               />
             </div>
+
             <div className="form-group">
-              <label>Password</label>
+              <label> New Password</label>
               <input
                 type="password"
                 className="form-control"
@@ -76,6 +83,7 @@ export class Register extends Component {
                 value={password}
               />
             </div>
+
             <div className="form-group">
               <label>Confirm Password</label>
               <input
@@ -86,13 +94,14 @@ export class Register extends Component {
                 value={password2}
               />
             </div>
+
             <div className="form-group">
               <button type="submit" className="btn btn-primary">
-                Register
+                Sign Up
               </button>
             </div>
             <p>
-              Already have an account? <Link to="/login">Login</Link>
+              Already a member? <Link to="/login">Login</Link>
             </p>
           </form>
         </div>

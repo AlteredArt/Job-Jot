@@ -1,4 +1,4 @@
-//110
+// Set your state and default function for your errors
 import { GET_ERRORS } from '../actions/types';
 
 const initialState = {

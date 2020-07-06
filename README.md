@@ -13,6 +13,8 @@ Babel: This allows Javascript to be understood by multiple browsers
   Before you get started:
 If you chose to just view a demo, check out my self demo video on youtube:
   https://www.youtube.com/watch?v=xfelUsydxrM
+For tutorials on how to build your own similar project see the Django docs:
+  https://www.django-rest-framework.org/#installation
 
   Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -60,10 +62,8 @@ These instructions will get you a copy of the project up and running on your loc
 Thank you for reading, I hope you enjoy jobjot
 Feel free to contact me at any time!
 
-
-
-
-
+  Problems:
+add your problems to the read me here
 
 
 

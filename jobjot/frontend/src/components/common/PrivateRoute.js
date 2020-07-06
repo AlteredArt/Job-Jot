@@ -1,7 +1,10 @@
-  // 110 complete
+// Private Routes makes it so other users cant access your data
 import React from 'react';
+
 import { Route, Redirect } from 'react-router-dom';
+
 import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
 
 const PrivateRoute = ({ component: Component, auth, ...rest }) => (
@@ -18,7 +21,7 @@ const PrivateRoute = ({ component: Component, auth, ...rest }) => (
     }}
   />
 );
-
+// make sure you map state to props
 const mapStateToProps = (state) => ({
   auth: state.auth,
 });
