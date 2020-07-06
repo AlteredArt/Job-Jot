@@ -1,4 +1,5 @@
 // Give your alerts some structure
+// import react and adds in a fragment
 import React, { Component, Fragment } from 'react';
 
 import { withAlert } from 'react-alert';
