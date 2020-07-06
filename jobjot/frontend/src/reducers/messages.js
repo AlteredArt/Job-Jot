@@ -1,5 +1,6 @@
-// 110
+// finally make our reducers method for creating a message
 import { CREATE_MESSAGE } from '../actions/types';
+
 
 const initialState = {};
 

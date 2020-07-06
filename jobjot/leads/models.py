@@ -1,4 +1,4 @@
-# 110  
+# This is the model config for a lead here well set up the name, email, message, and who owns it
 from django.db import models
 from django.contrib.auth.models import User
 

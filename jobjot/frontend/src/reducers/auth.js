@@ -1,14 +1,6 @@
-// 110
-import {
-  USER_LOADED,
-  USER_LOADING,
-  AUTH_ERROR,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  LOGOUT_SUCCESS,
-  REGISTER_SUCCESS,
-  REGISTER_FAIL,
-} from '../actions/types';
+// this reduces our actions into a simple folder for authorization
+// import all actions from types
+import { USER_LOADED, USER_LOADING, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS, REGISTER_SUCCESS, REGISTER_FAIL, } from '../actions/types';
 
 const initialState = {
   token: localStorage.getItem('token'),

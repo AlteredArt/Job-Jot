@@ -3,13 +3,13 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
-# User Serializer
+# This is the User Serializer
 class UserSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
     fields = ('id', 'username', 'email')
 
-# Register Serializer
+# This is the Register Serializer
 class RegisterSerializer(serializers.ModelSerializer):
   class Meta:
     model = User
@@ -18,10 +18,9 @@ class RegisterSerializer(serializers.ModelSerializer):
 
   def create(self, validated_data):
     user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
-
     return user
 
-# Login Serializer
+# This is the Login Serializer
 class LoginSerializer(serializers.Serializer):
   username = serializers.CharField()
   password = serializers.CharField()
@@ -29,5 +28,5 @@ class LoginSerializer(serializers.Serializer):
   def validate(self, data):
     user = authenticate(**data)
     if user and user.is_active:
-      return user
+        return user
     raise serializers.ValidationError("Incorrect Credentials")

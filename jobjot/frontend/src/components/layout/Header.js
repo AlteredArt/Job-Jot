@@ -1,8 +1,12 @@
-// 110 complete
+// structure for the header layout
 import React, { Component } from 'react';
+
 import { Link } from 'react-router-dom';
+
 import { connect } from 'react-redux';
+
 import PropTypes from 'prop-types';
+
 import { logout } from '../../actions/auth';
 
 export class Header extends Component {
@@ -13,7 +17,6 @@ export class Header extends Component {
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
-
     const authLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
         <span className="navbar-text mr-3">
@@ -26,12 +29,12 @@ export class Header extends Component {
         </li>
       </ul>
     );
-
+// redirect for guest users
     const guestLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
         <li className="nav-item">
           <Link to="/register" className="nav-link">
-            Register
+            Sign-Up
           </Link>
         </li>
         <li className="nav-item">
@@ -67,7 +70,7 @@ export class Header extends Component {
     );
   }
 }
-
+// make sure you map state to props
 const mapStateToProps = (state) => ({
   auth: state.auth,
 });

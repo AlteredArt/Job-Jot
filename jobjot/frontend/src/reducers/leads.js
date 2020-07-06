@@ -1,9 +1,10 @@
-// 110
+// import the types neccessary from the types folder and set state
 import { GET_LEADS, DELETE_LEAD, ADD_LEAD, CLEAR_LEADS } from '../actions/types.js';
 
 const initialState = {
   leads: [],
 };
+
 
 export default function (state = initialState, action) {
   switch (action.type) {
